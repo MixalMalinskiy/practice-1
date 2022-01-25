@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/pages',[\App\Http\Controllers\PageController::class,"index"]);
+Route::post('/pages', [\App\Http\Controllers\PageController::class, "addMessage"]);
+
+
+
